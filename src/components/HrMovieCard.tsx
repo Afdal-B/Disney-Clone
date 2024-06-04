@@ -1,6 +1,9 @@
-import React from "react";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
-function HrMovieCard({ movie }) {
+function HrMovieCard({
+  movie,
+}: {
+  movie: { backdrop_path: String; title: String };
+}) {
   return (
     <section className=" hover:border-gray-100 hover:scale-110 transition-all duration-150 cursor-pointer ease-in">
       <img

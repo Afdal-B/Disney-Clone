@@ -1,12 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getMovieByGenreId } from "../services/GlobalApi";
 import MovieCard from "./MovieCard";
 import { IoChevronBackOutline, IoChevronForwardOutline } from "react-icons/io5";
 import HrMovieCard from "./HrMovieCard";
-function MovieList({ genreId, index_ }) {
+function MovieList({ genreId, index_ }: { genreId: number; index_: number }) {
   const [movieList, setMovieList] = useState([]);
   const screenWidth = window.innerWidth;
-  const elementRef = useRef();
+  const elementRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     getMoviesByGenre();
   }, []);
@@ -15,10 +15,10 @@ function MovieList({ genreId, index_ }) {
       setMovieList(resp.data.results);
     });
   };
-  const sliderRight = (element) => {
+  const sliderRight = (element: HTMLDivElement) => {
     element.scrollLeft += screenWidth - 110;
   };
-  const sliderLeft = (element) => {
+  const sliderLeft = (element: HTMLDivElement) => {
     element.scrollLeft -= screenWidth - 110;
   };
   return (

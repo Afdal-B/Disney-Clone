@@ -1,4 +1,3 @@
-import React from "react";
 import GenresList from "../Constants/GenresList";
 import MovieList from "./MovieList";
 function GenreMovieList() {

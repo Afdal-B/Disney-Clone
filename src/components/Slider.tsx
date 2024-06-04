@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { getTrendingVideos } from "./../services/GlobalApi";
 import { HiChevronRight, HiChevronLeft } from "react-icons/hi";
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
@@ -6,7 +6,7 @@ const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 const screenWidth = window.innerWidth;
 function Slider() {
   const [movieList, setMovieList] = useState([]);
-  const elementRef = useRef();
+  const elementRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     getTrendingMovies();
   }, []);
@@ -18,10 +18,10 @@ function Slider() {
     });
   };
 
-  const sliderRight = (element) => {
+  const sliderRight = (element: HTMLDivElement) => {
     element.scrollLeft += screenWidth - 110;
   };
-  const sliderLeft = (element) => {
+  const sliderLeft = (element: HTMLDivElement) => {
     element.scrollLeft -= screenWidth - 110;
   };
   return (
