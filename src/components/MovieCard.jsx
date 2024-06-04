@@ -1,6 +1,6 @@
 const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 
-function MovieCard({ movie }: { movie: { poster_path: String } }) {
+function MovieCard({ movie }) {
   return (
     <>
       <img

@@ -6,7 +6,7 @@ const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/original";
 const screenWidth = window.innerWidth;
 function Slider() {
   const [movieList, setMovieList] = useState([]);
-  const elementRef = useRef<HTMLDivElement>(null);
+  const elementRef = useRef();
   useEffect(() => {
     getTrendingMovies();
   }, []);
@@ -18,10 +18,10 @@ function Slider() {
     });
   };
 
-  const sliderRight = (element: HTMLDivElement) => {
+  const sliderRight = (element) => {
     element.scrollLeft += screenWidth - 110;
   };
-  const sliderLeft = (element: HTMLDivElement) => {
+  const sliderLeft = (element) => {
     element.scrollLeft -= screenWidth - 110;
   };
   return (
